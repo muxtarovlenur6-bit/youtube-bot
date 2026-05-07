@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: youtube-telegram-bot
+    env: python
+    pythonVersion: "3.11.0"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python "bot (1).py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false   # Render dashboard'dan qo'lda kiritiladi
+    healthCheckPath: /
