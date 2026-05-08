@@ -1,6 +1,14 @@
 import os, time, requests, logging, threading
 from flask import Flask
-import yt_dlp
+import yt_dlp    
+
+
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'outtmpl': '/tmp/audio.%(ext)s',
+    'quiet': True,
+    'cookiefile': 'cookies.txt',  # ← shu qator
+}
 
 logging.basicConfig(level=logging.INFO)
 TOKEN = os.environ.get("BOT_TOKEN", "")
